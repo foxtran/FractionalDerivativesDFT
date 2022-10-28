@@ -1,0 +1,14 @@
+%nprocshared=6
+%mem=6Gb
+#p HF/UGBS output=wfn
+
+TITLE
+
+0 1
+H 0. 0. 0.
+H 0. 0. 0.741
+
+H2.wfn
+   
+   
+   

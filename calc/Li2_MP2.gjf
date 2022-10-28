@@ -1,0 +1,14 @@
+%nprocshared=6
+%mem=6Gb
+#p MP2/def2TZVP output=wfn OPT
+
+TITLE
+
+0 1
+Li 0. 0. 0.
+Li 0. 0. 0.741
+
+Li2_MP2.wfn
+   
+   
+   

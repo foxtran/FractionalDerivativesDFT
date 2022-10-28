@@ -1,0 +1,13 @@
+%nprocshared=6
+%mem=6Gb
+#p HF/UGBS output=wfn
+
+TITLE
+
+0 1
+Xe 0. 0. 0.
+
+Xe.wfn
+   
+   
+   
