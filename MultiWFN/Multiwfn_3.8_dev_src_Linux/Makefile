@@ -1,17 +1,17 @@
-SIMD = -msse3
-OPT = -O2 -qopenmp -qopenmp-link=static -threads -qopt-matmul $(SIMD) -diag-disable 8290,8291,6371,10316,6178 -fpp -mkl -static-intel -DINTEL_MKL
-OPT1 = -O1 -qopenmp -qopenmp-link=static -threads $(SIMD) -diag-disable 8290,8291,6371,10316,6178 -fpp -mkl -static-intel -DINTEL_MKL
+SIMD =
+OPT = -O2 -fopenmp -ffree-line-length-none -cpp
+OPT1 = -O1 -fopenmp -ffree-line-length-none -cpp
 #Options in the next line is for debugging purpose
 #OPTDBG = -O0 -qopenmp -diag-disable 8290,8291,6371 -threads -qopenmp-link=static -debug all -g -traceback -check all -fstack-protector -fpp -mkl -static-intel
 
-LIB_base =
+LIB_base = -lblas -llapack
 LIB_GUI = $(LIB_base) ./dislin_d-11.0.a -lXm -lXt -lX11 -lGL   #At least works for CentOS 7.x
 LIB_noGUI = $(LIB_base)
 INCLUDE = -I./ -I./ext
-FC = ifort
+FC = gfortran
 CC = gcc
-EXE = Multiwfn
-EXE_noGUI = Multiwfn_noGUI
+EXE = gMultiwfn
+EXE_noGUI = gMultiwfn_noGUI
 LIBRETAPATH = ./libreta_hybrid
 
 objects = define.o util.o plot.o Bspline.o sym.o libreta.o function.o GUI.o sub.o integral.o Lebedev-Laikov.o \
@@ -230,7 +230,7 @@ cp2kmate.o : cp2kmate.f90 $(modules)
 
 
 noGUI/dislin_d_empty.o : noGUI/dislin_d_empty.f90
-	$(FC) $(OPT) -c noGUI/dislin_d_empty.f90 -o noGUI/dislin_d_empty.o -diag-disable 6178,6843
+	$(FC) $(OPT) -c noGUI/dislin_d_empty.f90 -o noGUI/dislin_d_empty.o
 
 
 # Interfaces of libreta-ESP to Multiwfn
@@ -241,10 +241,10 @@ libreta.o: ${LIBRETAPATH}/libreta.f90 hrr_012345.o blockhrr_012345.o ean.o eanvr
 # Pure libreta files for ESP
 
 hrr_012345.o: ${LIBRETAPATH}/hrr_012345.f90
-	$(FC) $(OPT) -diag-disable 6843 $(SIMD) -c ${LIBRETAPATH}/hrr_012345.f90
+	$(FC) $(OPT) -c ${LIBRETAPATH}/hrr_012345.f90
 
 blockhrr_012345.o: ${LIBRETAPATH}/blockhrr_012345.f90
-	$(FC) -O1 -diag-disable 6843 $(SIMD) -c ${LIBRETAPATH}/blockhrr_012345.f90
+	$(FC) -O1 -c ${LIBRETAPATH}/blockhrr_012345.f90
 
 ean.o: ${LIBRETAPATH}/ean.f90 hrr_012345.o eanvrr_012345.o boysfunc.o ${LIBRETAPATH}/ean_data1.h ${LIBRETAPATH}/ean_data2.h
 	$(FC) $(OPT) -c ${LIBRETAPATH}/ean.f90
