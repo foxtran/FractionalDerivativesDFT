@@ -19,7 +19,7 @@ do
   if [ -f Xe_R_$log.txt ]; then
     continue
   fi
-  echo "1000 24 set_p $alpha $p approx 200 5 3 0.0,5.0 4 302 5 2501 1 24 0 5" | tr " " "\n" | ./gMultiwfn Xe.wfn
+  echo "1000 24 set_p $alpha $p approx 200 5 3 0.0,5.0 4 302 5 2501 1 24 0 5" | tr " " "\n" | ./gMultiwfn_noGUI Xe.wfn
   mv RDF.txt Xe_R_$log.txt
 done
 
