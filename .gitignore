@@ -1,0 +1,6 @@
+*.o
+*.mod
+*.fmod
+
+01.JCTC/MultiWFN/Multiwfn_3.8_dev_src_Linux/gMultiwfn_noGUI
+01.JCTC/MultiWFN/Multiwfn_3.8_dev_src_Linux/gMultiwfn
