@@ -1,8 +1,10 @@
 # Computation of Mutual Information
 
 There is a script `MI_parallel.py` for computing Mutual Information.
-It uses data from `whole_data.csv`, which can be generated via scripts in `gen/` directory or extracted from `whole_data.csv.tar.xz` using the command `tar -xzvf whole_data.csv.tar.xz`.
+It uses data from `whole_data.csv`, which can be generated via scripts in `gen/` directory or extracted using the command `./unar.sh`.
 `dist_parallel.csv` presents our data gotten with `MI_parallel.py`.
+
+Note, `./unar.sh` does not produce exactly what `gen/gen.py` produces, since filtering and float-point convertions were done. For more details about filtering and conversion, see `./to_hdf5.py`.
 
 After running `MI_parallel.py`, `dist_parallel.csv` will be created. Data from `MIDist` column is presented in the Table 1 of Main text.
 `Var1` and `Var2` columns represent computed features. Their meanings are presented in table below:
