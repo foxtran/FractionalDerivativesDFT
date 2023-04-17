@@ -5,6 +5,7 @@ This directory is related to a paper submitted to JCTC.
 ## Directory structure
 ```
 01.JCTC/          This directory
+├── GTOSTO-plot/  contains scripts for plotting Figure S2.
 ├── IP/           contains scripts for checking correctness of Ionization Potential evaluation
 ├── MI/           contains script for computing Mutual Information (Table 1)
 │   └── gen/      contains scripts for preparing necessary data for computing Mutual Information
