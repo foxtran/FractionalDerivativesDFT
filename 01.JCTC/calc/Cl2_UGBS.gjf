@@ -1,0 +1,14 @@
+%nprocshared=32
+%mem=16Gb
+#p HF/UGBS output=wfn
+
+TITLE
+
+0 1
+Cl 0. 0.  0.995100
+Cl 0. 0. -0.995100
+
+Cl2_UGBS.wfn
+   
+   
+   
