@@ -15,3 +15,9 @@
 01.JCTC/Xe-plot/*.txt
 01.JCTC/Xe-plot/*.log
 01.JCTC/Xe-plot/*.png
+
+
+01.JCTC/Cl2-plot/*.txt
+01.JCTC/Cl2-plot/*.log
+01.JCTC/Cl2-plot/*.png
+01.JCTC/Cl2-plot/Cl2_data.csv

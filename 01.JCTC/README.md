@@ -5,6 +5,7 @@ This directory is related to a paper submitted to JCTC.
 ## Directory structure
 ```
 01.JCTC/          This directory
+├── Cl2-plot/     contains scripts for plotting Figures 2 and S1.
 ├── GTOSTO-plot/  contains scripts for plotting Figure S2.
 ├── IP/           contains scripts for checking correctness of Ionization Potential evaluation
 ├── MI/           contains script for computing Mutual Information (Table 1)
