@@ -11,15 +11,12 @@ AB=("-2.0,0"
 for i in ${AB[@]}
 do
   log=`echo $i | sed "s/,/l/"`
-  echo $i
   alpha=`echo $i | cut -d"," -f1`
   p=`echo $i | cut -d"," -f2`
-  echo $alpha
-  echo $p
   if [ -f Xe_R_$log.txt ]; then
     continue
   fi
-  echo "1000 24 set_p $alpha $p approx 200 5 3 0.0,5.0 4 302 5 2501 1 24 0 5" | tr " " "\n" | ./gMultiwfn_noGUI Xe.wfn
+  echo "1000 1303 set_p $alpha $p approx 1000 2 1303 200 5 3 0.0,10.0 4 302 5 5001 1 100 0 5" | tr " " "\n" | ./gMultiwfn_noGUI Xe.wfn
   mv RDF.txt Xe_R_$log.txt
 done
 

@@ -10,3 +10,8 @@
 01.JCTC/GTOSTO-plot/STO-GTO.csv
 01.JCTC/GTOSTO-plot/STO-GTO.png
 01.JCTC/GTOSTO-plot/STO-GTO_logscaled.png
+
+
+01.JCTC/Xe-plot/*.txt
+01.JCTC/Xe-plot/*.log
+01.JCTC/Xe-plot/*.png
