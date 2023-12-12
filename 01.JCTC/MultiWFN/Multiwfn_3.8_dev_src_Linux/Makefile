@@ -80,7 +80,10 @@ Bspline.o : Bspline.f90
 util.o : util.f90 define.o
 	$(FC) $(OPT) -c util.f90
 
-function.o : function.f90 define.o util.o Bspline.o libreta.o
+2F2.f90.o : ext/2F2.f90 util.o Bspline.o
+	$(FC) $(OPT) -c ext/2F2.f90 -o 2F2.f90.o
+
+function.o : function.f90 define.o util.o Bspline.o libreta.o 2F2.f90.o
 	$(FC) $(OPT) -c function.f90
 
 plot.o : plot.f90 define.o util.o
@@ -88,9 +91,6 @@ plot.o : plot.f90 define.o util.o
 
 GUI.o : GUI.f90 define.o plot.o function.o
 	$(FC) $(OPT) -c GUI.f90
-
-2F2.f90.o : ext/2F2.f90 util.o Bspline.o
-	$(FC) $(OPT) -c ext/2F2.f90 -o 2F2.f90.o
 
 modules = define.o util.o function.o plot.o GUI.o libreta.o 2F2.f90.o
 
