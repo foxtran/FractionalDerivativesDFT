@@ -1839,17 +1839,6 @@ end do
 call walltime(iwalltime2)
 write(*,"(' Calculation took up wall clock time',i10,'s',/)") iwalltime2-iwalltime1
 write(*,"(' Final result:',f24.12)") intval
-
-!Write calculated wfn1 data to external file for reuse in the later calculation
-if (ireuse==0) then
-	open(10,file=reusename,status="replace")
-	do iatm=1,ncenter
-		write(10,*) iatm
-		write(10,*) funcval1all(:,iatm)
-	end do
-	close(10)
-	write(*,"(/,' Data of the firstly loaded file have been exported to ',a,' for possible later use')") trim(reusename)
-end if
 end subroutine
 
 
