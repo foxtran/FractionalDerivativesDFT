@@ -434,7 +434,7 @@ integer,allocatable :: domaingrid(:,:) !The grid indices contained in each domai
 real*8 :: dp_init1,dp_end1,dp_init2,dp_end2,dp_init3,dp_end3,sur_value=0.05D0,sur_value_orb=0.05D0
 
 !!! Other external parameter !!!
-integer :: iautointgrid=1,radpot=75,sphpot=434 !sphpot=230/302/434/590/770, low is 50*434, high is 100*590
+integer :: iautointgrid=1,radpot=300,sphpot=590 !sphpot=230/302/434/590/770, low is 50*434, high is 100*590
 integer :: ispecial=0 !=0: Normal, =1 specific for Chunying Rong, =2 for Shubin's 2nd project
 #ifdef _WIN32
 integer :: isys=1 !Windows
