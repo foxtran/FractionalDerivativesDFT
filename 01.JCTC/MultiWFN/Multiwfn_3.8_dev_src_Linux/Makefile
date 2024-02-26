@@ -30,6 +30,9 @@ ifeq ($(WITH_FD),1)
   else ifeq ($(OS),RHEL) # for Fedora, CentOS, RHEL
     INCLUDE += -I/usr/include/arb
     LIB_base += -lflint -larb
+  else ifeq ($(OS),MacOS)
+    INCLIDE += $(shell pkg-config --cflags flint)
+    LIB_base += -lflint $(shell pkg-config --libs flint gmp mpfr)
   endif
 else
   objects += no2F2.c.o
