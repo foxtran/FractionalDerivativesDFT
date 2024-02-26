@@ -1,0 +1,14 @@
+%nprocshared=4
+%mem=2Gb
+#p HF/aug-cc-pVQZ OUTPUT=WFN geom=nocrowd nosymm
+
+TITLE
+
+0 2
+H 0. 0. 0.
+H-Bq 0. 0. 2.8
+
+H-X.2.8.wfn
+   
+   
+   
