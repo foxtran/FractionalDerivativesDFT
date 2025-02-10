@@ -1,4 +1,4 @@
-#!/usr/bin/Rscript
+#!/usr/bin/env Rscript
 
 library(tidyr)
 library(dplyr)
@@ -140,9 +140,9 @@ p <- tab %>%
          ) %>%
   crossing(Scal = c(0,2,-1,-2)) %>%
   mutate(ScalText = factor(Scal, levels=c(0,-1,2,-2,-3), labels = c( expression(frac(xi^alpha*(R),max~xi^alpha*(R))),
-                                                                     expression(k^alpha*(R)%==%frac(xi[unif]^alpha*(R),xi^alpha*(R))),
+                                                                     expression(t[xi]^alpha*(R)%==%frac(xi[unif]^alpha*(R),xi^alpha*(R))),
                                                                      expression(frac(xi^alpha*(R)%*%R^2,max~xi^alpha*(R)%*%R^2)),
-                                                                     expression(omega^alpha*(R)%==%frac(k^alpha*(R) - 1, k^alpha*(R) + 1)),
+                                                                     expression(omega[xi]^alpha*(R)%==%frac(t[xi]^alpha*(R) - 1, t[xi]^alpha*(R) + 1)),
                                                                      expression(frac(xi^alpha*(R),(xi^-0.5*(R))^frac(1,2)))
                                                                     ))) %>%
   group_by(Alpha, p, Scal) %>%
@@ -164,7 +164,7 @@ p <- tab %>%
                        values=c('#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#a65628','#f781bf'),
 #                       labeller = label_parsed) +
                        labels=c(expression(0^bold("−") %==% rho / 2),expression(1^bold("−") %==% tau),expression(-1/2),expression(1/2),expression(-1),expression(0^bold("+")),expression(-2))) +
-    theme(legend.position="bottom", strip.background = element_rect(fill="white")) +
+    theme(legend.position="bottom", strip.background = element_rect(fill="white"), legend.text = element_text(margin = margin(r = 10, l = 4, unit = "pt"))) +
     guides(color = guide_legend(nrow = 2))
 
 scale_fig = 1
